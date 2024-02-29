@@ -5,6 +5,6 @@ public interface IToDoList {
     public abstract void completeTask(String taskId);
     public abstract void deleteTask(String taskId);
     public abstract void editTask(String taskId, String newTitle);
-    public abstract void undoTask(String taskId);
+    public abstract void undo();
     public abstract void listTasks();
 }

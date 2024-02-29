@@ -56,7 +56,7 @@ public class ToDoList implements IToDoList {
     }
 
     @Override
-    public void undoTask(String taskId) {
+    public void undo() {
         if (!history.isEmpty()) {
             tasks = history.pop();
         }

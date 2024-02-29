@@ -28,7 +28,7 @@ public class ToDoList implements IToDoList {
     }
 
     @Override
-    public void completeTask(int taskId) {
+    public void completeTask(String taskId) {
         saveState();
         for (Task task : tasks) {
             if (task.getId() == taskId) {
@@ -39,13 +39,13 @@ public class ToDoList implements IToDoList {
     }
 
     @Override
-    public void deleteTask(int taskId) {
+    public void deleteTask(String taskId) {
         saveState();
         tasks.removeIf(task -> task.getId() == taskId);
     }
 
     @Override
-    public void editTask(int taskId, String newTitle) {
+    public void editTask(String taskId, String newTitle) {
         saveState();
         for (Task task : tasks) {
             if (task.getId() == taskId) {
@@ -56,7 +56,7 @@ public class ToDoList implements IToDoList {
     }
 
     @Override
-    public void undoTask(int taskId) {
+    public void undoTask(String taskId) {
         if (!history.isEmpty()) {
             tasks = history.pop();
         }

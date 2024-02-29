@@ -19,17 +19,16 @@ public class Task {
         return Objects.hash(id, title, isCompleted);
     }
 
-    private int id;
+    private String id;
     private String title;
     private boolean isCompleted;
 
-    public Task(int id, String title, boolean isCompleted) {
+    public Task(String id, String title) {
         this.id = id;
         this.title = title;
-        this.isCompleted = isCompleted;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -41,7 +40,7 @@ public class Task {
         return isCompleted;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -54,7 +53,7 @@ public class Task {
     }
 
     public Task copy() {
-        return new Task(id, title, isCompleted);
+        return new Task(id, title);
     }
 
 }
